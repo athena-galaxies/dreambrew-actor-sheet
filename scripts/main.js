@@ -13,24 +13,31 @@ class DreambrewActorSheet extends dnd5e.applications.actor.ActorSheet5eCharacter
 
   getData() {
     const data = super.getData();
-    // Add custom logic here if needed
+    // Add your custom logic here
     return data;
   }
 
   activateListeners(html) {
     super.activateListeners(html);
-    // Add interactive events here
+    // Interactive stuff goes here
   }
 }
 
-// Expose globally
-CONFIG.Actor.sheetClasses["dnd5e"]["dreambrew"] = {
-  label: "Dreambrew Sheet",
-  sheetClass: DreambrewActorSheet,
-  types: ["character"],
-  makeDefault: true
-};
-
 Hooks.once("init", () => {
   console.log("Initializing Dreambrew Character Sheet");
+
+  // This is what makes it SHOW UP
+  Actors.registerSheet("dnd5e", DreambrewActorSheet, {
+    types: ["character"],
+    makeDefault: false,
+    label: "Dreambrew Sheet"
+  });
+
+  // Optional: also register it into CONFIG if needed
+  CONFIG.Actor.sheetClasses["dnd5e"]["dreambrew"] = {
+    label: "Dreambrew Sheet",
+    sheetClass: DreambrewActorSheet,
+    types: ["character"],
+    makeDefault: false
+  };
 });
