@@ -1,28 +1,22 @@
-class DreambrewActorSheet extends ActorSheet5eCharacter {
+class DreambrewActorSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["dreambrew", "sheet", "actor"],
-      template: "templates/sheet.html", // Adjust if your file path is different
+      classes: ["dnd5e", "sheet", "actor", "dreambrew"],
+      template: "templates/sheet.html",
       width: 800,
       height: 700,
-      tabs: [
-        {
-          navSelector: ".sheet-tabs",
-          contentSelector: ".sheet-body",
-          initial: "main"
-        }
-      ]
+      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "overview" }]
     });
   }
+
+  getData() {
+    const data = super.getData();
+    // You can customize what data is passed to the sheet here
+    return data;
+  }
+
+  activateListeners(html) {
+    super.activateListeners(html);
+    // Add any interactivity or event listeners here
+  }
 }
-
-Hooks.once("init", () => {
-  console.log("Dreambrew | Registering custom actor sheet");
-
-  Actors.unregisterSheet("core", ActorSheet5eCharacter);
-  Actors.registerSheet("dreambrew", DreambrewActorSheet, {
-    types: ["character"],
-    makeDefault: true,
-    label: "Dreambrew Sheet"
-  });
-});
