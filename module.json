@@ -3,6 +3,7 @@
   "title": "Dreambrew Character Sheet",
   "description": "A custom character sheet module for the Dreambrew system, built on D&D 5e.",
   "version": "1.0.0",
+  "type": "module",
   "author": "Aves",
   "minimumCoreVersion": "11",
   "compatibleCoreVersion": "11",
