@@ -1,0 +1,18 @@
+{
+  "name": "dreambrew-actor-sheet",
+  "title": "Dreambrew Character Sheet",
+  "description": "A custom character sheet module for the Dreambrew system, built on D&D 5e.",
+  "version": "1.0.0",
+  "author": "Aves",
+  "minimumCoreVersion": "11",
+  "compatibleCoreVersion": "11",
+  "system": ["dnd5e"],
+  "scripts": ["scripts/main.js"],
+  "styles": ["styles/sheet.css"],
+  "esmodules": [],
+  "languages": [],
+  "url": "https://github.com/athena-galaxies/dreambrew-actor-sheet",
+  "manifest": "https://raw.githubusercontent.com/athena-galaxies/dreambrew-actor-sheet/main/module.json",
+  "download": "https://github.com/athena-galaxies/dreambrew-actor-sheet/releases/download/v1.0.0/dreambrew-actor-sheet.zip",
+  "manifestPlusVersion": "1.2"
+}
